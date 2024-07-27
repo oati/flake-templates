@@ -1,7 +1,7 @@
 # Nix Flake Templates
 
 This is a collection of [Nix flake](https://nixos.wiki/wiki/Flakes) templates I
-use in my personal projects. They mostly provide development shells (i.e.
+use in my personal projects. Most of them provide development shells (i.e.
 `devShells.*`), but I may add further instructions for production builds in the
 future.
 
@@ -158,18 +158,6 @@ This flake provides minimal dependencies for [Gleam](https://gleam.run/).
 
 ``` bash
 nix flake init -t github:akirak/flake-templates#gleam
-```
-
-### [emacs-lisp](emacs-lisp/)
-
-This boilerplate contains configuration files for checking Emacs Lisp packages.
-It uses [rice-config](https://github.com/emacs-twist/rice-config) (which relies
-on [twist.nix](https://github.com/emacs-twist/rice-config) under the hood) and
-[reusable workflows](https://github.com/emacs-twist/elisp-workflows) for GitHub
-Actions to minimize maintenance.
-
-``` bash
-nix flake init -t github:akirak/flake-templates#emacs-lisp
 ```
 
 ### [meta](meta/)
