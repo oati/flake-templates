@@ -15,6 +15,11 @@
         description = "typst project";
         path = ./typst;
       };
+
+      python = {
+        description = "python project";
+        path = ./python;
+      };
     };
   };
 }
