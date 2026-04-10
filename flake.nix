@@ -20,6 +20,11 @@
         description = "python project";
         path = ./python;
       };
+
+      python-marimo = {
+        description = "python project with marimo";
+        path = ./python-marimo;
+      };
     };
   };
 }
