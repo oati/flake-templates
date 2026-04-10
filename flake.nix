@@ -10,6 +10,11 @@
         description = "flake boilerplate for devshell and package";
         path = ./base-with-package;
       };
+
+      typst = {
+        description = "typst project";
+        path = ./typst;
+      };
     };
   };
 }
