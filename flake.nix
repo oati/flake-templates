@@ -16,6 +16,11 @@
         path = ./typst;
       };
 
+      rust = {
+        description = "rust project";
+        path = ./rust;
+      };
+
       python = {
         description = "python project";
         path = ./python;
