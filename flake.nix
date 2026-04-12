@@ -22,13 +22,18 @@
       };
 
       python = {
-        description = "python project";
+        description = "python project using nixpkgs";
         path = ./python;
       };
 
       python-marimo = {
         description = "python project with marimo";
         path = ./python-marimo;
+      };
+
+      python-uv = {
+        description = "python project using uv";
+        path = ./python-uv;
       };
     };
   };
