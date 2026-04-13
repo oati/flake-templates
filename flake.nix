@@ -26,6 +26,11 @@
         path = ./python;
       };
 
+      python-with-package = {
+        description = "python project with package";
+        path = ./python-with-package;
+      };
+
       python-nixpkgs = {
         description = "python project using nixpkgs";
         path = ./python-nixpkgs;

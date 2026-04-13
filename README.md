@@ -21,3 +21,11 @@ nix shell nixpkgs#python3 nixpkgs#uv
 uv init --bare
 uv lock
 ```
+
+### python-with-package
+
+```sh
+nix shell nixpkgs#python3 nixpkgs#uv
+uv init --bare --package
+uv lock
+```

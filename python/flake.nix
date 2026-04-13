@@ -12,13 +12,6 @@
       inputs.pyproject-nix.follows = "pyproject-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    pyproject-build-systems = {
-      url = "github:pyproject-nix/build-system-pkgs";
-      inputs.pyproject-nix.follows = "pyproject-nix";
-      inputs.uv2nix.follows = "uv2nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs: let
@@ -40,7 +33,6 @@
           (pkgs.callPackage inputs.pyproject-nix.build.packages {
             inherit python;
           }).overrideScope (lib.composeManyExtensions [
-            inputs.pyproject-build-systems.overlays.wheel
             workspace-overlay
           ]);
 
