@@ -19,7 +19,6 @@
               with p; [
                 ruff
                 ty
-                marimo
               ]))
           ];
         };
