@@ -14,18 +14,17 @@
     devShells =
       lib.mapAttrs (system: pkgs: {
         default = pkgs.mkShell {
-          packages = with pkgs; [
-            (typst.wrapper {
-              packages = p:
-                with p; [
-                ];
+          packages = [
+            (pkgs.typst.wrapper {
+              packages = p: [
+              ];
 
               fonts = [
               ];
             })
 
             # language server
-            tinymist
+            pkgs.tinymist
           ];
         };
       })
