@@ -12,32 +12,32 @@
       };
 
       typst = {
-        description = "typst project";
+        description = "typst devshell";
         path = ./typst;
       };
 
       typst-document = {
-        description = "typst document with package";
+        description = "typst devshell and document package";
         path = ./typst-document;
       };
 
       rust = {
-        description = "rust project";
+        description = "rust devshell and package";
         path = ./rust;
       };
 
       python = {
-        description = "python project";
+        description = "python devshell";
         path = ./python;
       };
 
       python-with-package = {
-        description = "python project with package";
+        description = "python devshell and package";
         path = ./python-with-package;
       };
 
       python-nixpkgs = {
-        description = "python project using nixpkgs";
+        description = "python devshell using nixpkgs";
         path = ./python-nixpkgs;
       };
     };
