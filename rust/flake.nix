@@ -34,7 +34,7 @@
       lib.mapAttrs (system: pkgs: {
         default = pkgs.mkShell {
           inputsFrom = [
-            inputs.self.packages.${system}.my-package
+            inputs.self.packages.${system}.default
           ];
 
           packages = [
