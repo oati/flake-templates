@@ -16,6 +16,11 @@
         path = ./typst;
       };
 
+      typst-document = {
+        description = "typst document with package";
+        path = ./typst-document;
+      };
+
       rust = {
         description = "rust project";
         path = ./rust;
