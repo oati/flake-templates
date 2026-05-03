@@ -15,7 +15,14 @@
       lib.mapAttrs (system: pkgs: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            typst
+            (typst.wrapper {
+              packages = p:
+                with p; [
+                ];
+
+              fonts = [
+              ];
+            })
 
             # language server
             tinymist
