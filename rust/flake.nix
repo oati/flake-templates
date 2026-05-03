@@ -10,7 +10,7 @@
       import inputs.nixpkgs {
         localSystem.system = system;
       });
-    revision = inputs.self.shortRev or inputs.self.dirtyShortRev;
+    revision = inputs.self.shortRev or inputs.self.dirtyShortRev or "";
   in {
     packages =
       lib.mapAttrs (system: pkgs: rec {
