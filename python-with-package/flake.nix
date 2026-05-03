@@ -69,6 +69,7 @@
             uv
             pythonEnv
 
+            # language server
             python3Packages.ruff
             python3Packages.ty
           ];

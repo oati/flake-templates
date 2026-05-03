@@ -38,6 +38,7 @@
           ];
 
           packages = with pkgs; [
+            # language server
             rust-analyzer
             clippy
           ];

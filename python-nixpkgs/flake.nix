@@ -17,6 +17,7 @@
           packages = with pkgs; [
             (python3.withPackages (p:
               with p; [
+                # language server
                 ruff
                 ty
               ]))

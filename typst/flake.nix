@@ -16,6 +16,8 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             typst
+
+            # language server
             tinymist
           ];
         };
