@@ -12,7 +12,7 @@
         localSystem.system = system;
         overlays = [inputs.press.overlays.default];
       });
-    revision = inputs.self.shortRev or inputs.self.dirtyShortRev;
+    revision = inputs.self.shortRev or inputs.self.dirtyShortRev or "";
   in {
     packages =
       lib.mapAttrs (system: pkgs: rec {
