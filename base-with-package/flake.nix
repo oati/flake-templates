@@ -33,7 +33,7 @@
             inputs.self.packages.${system}.my-package
           ];
 
-          packages = with pkgs; [
+          packages = [
           ];
 
           shellHook = ''

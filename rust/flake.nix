@@ -37,10 +37,10 @@
             inputs.self.packages.${system}.my-package
           ];
 
-          packages = with pkgs; [
+          packages = [
             # language server
-            rust-analyzer
-            clippy
+            pkgs.rust-analyzer
+            pkgs.clippy
           ];
         };
       })

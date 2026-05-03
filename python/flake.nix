@@ -39,13 +39,13 @@
         pythonEnv = pythonPackageSet.mkVirtualEnv "python-env" workspace.deps.all;
       in {
         default = pkgs.mkShell {
-          packages = with pkgs; [
-            uv
+          packages = [
+            pkgs.uv
             pythonEnv
 
             # language server
-            python3Packages.ruff
-            python3Packages.ty
+            pkgs.python3Packages.ruff
+            pkgs.python3Packages.ty
           ];
         };
       })

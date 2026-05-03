@@ -65,13 +65,13 @@
             inputs.self.packages.${system}.my-package
           ];
 
-          packages = with pkgs; [
-            uv
+          packages = [
+            pkgs.uv
             pythonEnv
 
             # language server
-            python3Packages.ruff
-            python3Packages.ty
+            pkgs.python3Packages.ruff
+            pkgs.python3Packages.ty
           ];
         };
       })

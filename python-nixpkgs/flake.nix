@@ -14,13 +14,12 @@
     devShells =
       lib.mapAttrs (system: pkgs: {
         default = pkgs.mkShell {
-          packages = with pkgs; [
-            (python3.withPackages (p:
-              with p; [
-                # language server
-                ruff
-                ty
-              ]))
+          packages = [
+            (pkgs.python3.withPackages (p: [
+              # language server
+              p.ruff
+              p.ty
+            ]))
           ];
         };
       })
