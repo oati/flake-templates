@@ -12,20 +12,13 @@ Some templates require initialization before use.
 nix shell nixpkgs#cargo
 cargo init
 cargo generate-lockfile
+nix develop
 ```
 
 ### python
 
 ```sh
-nix shell nixpkgs#python3 nixpkgs#uv
-uv init --bare
-uv lock
-```
-
-### python-with-package
-
-```sh
-nix shell nixpkgs#python3 nixpkgs#uv
-uv init --bare --package
+nix develop
+uv init
 uv lock
 ```
