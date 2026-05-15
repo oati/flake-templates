@@ -27,13 +27,8 @@
       };
 
       python = {
-        description = "python devshell";
+        description = "python devshell using uv";
         path = ./python;
-      };
-
-      python-with-package = {
-        description = "python devshell and package";
-        path = ./python-with-package;
       };
 
       python-nixpkgs = {
