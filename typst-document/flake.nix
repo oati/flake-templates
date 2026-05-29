@@ -4,18 +4,22 @@
     press.url = "github:RossSmyth/press";
   };
 
-  outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
-    eachSystem = lib.genAttrs lib.systems.flakeExposed;
-    pkgsFor = eachSystem (system:
-      import inputs.nixpkgs {
-        localSystem.system = system;
-        overlays = [inputs.press.overlays.default];
-      });
-    revision = inputs.self.shortRev or inputs.self.dirtyShortRev or "";
-  in {
-    packages =
-      lib.mapAttrs (system: pkgs: rec {
+  outputs =
+    inputs:
+    let
+      inherit (inputs.nixpkgs) lib;
+      eachSystem = lib.genAttrs lib.systems.flakeExposed;
+      pkgsFor = eachSystem (
+        system:
+        import inputs.nixpkgs {
+          localSystem.system = system;
+          overlays = [ inputs.press.overlays.default ];
+        }
+      );
+      revision = inputs.self.shortRev or inputs.self.dirtyShortRev or "";
+    in
+    {
+      packages = lib.mapAttrs (system: pkgs: rec {
         default = my-document;
 
         my-document = pkgs.buildTypstDocument {
@@ -31,11 +35,9 @@
           fonts = [
           ];
         };
-      })
-      pkgsFor;
+      }) pkgsFor;
 
-    devShells =
-      lib.mapAttrs (system: pkgs: {
+      devShells = lib.mapAttrs (system: pkgs: {
         default = pkgs.mkShell {
           inputsFrom = [
             inputs.self.packages.${system}.default
@@ -46,7 +48,6 @@
             pkgs.tinymist
           ];
         };
-      })
-      pkgsFor;
-  };
+      }) pkgsFor;
+    };
 }
