@@ -17,25 +17,32 @@
     in
     {
       devShells = lib.mapAttrs (system: pkgs: {
-        default = pkgs.mkShell {
-          packages = [
-            pkgs.uv
-            pkgs.python3
+        default =
+          let
+            python = pkgs.python3;
+          in
+          pkgs.mkShell {
+            packages = [
+              pkgs.uv
+              python
 
-            # language server
-            pkgs.python3Packages.ruff
-            pkgs.python3Packages.ty
-          ];
+              # language server
+              pkgs.python3Packages.ruff
+              pkgs.python3Packages.ty
+            ];
 
-          env = {
-            LD_LIBRARY_PATH = inputs.nixpkgs.lib.makeLibraryPath [ ];
+            env = {
+              UV_PYTHON = lib.getExe python;
+              UV_PYTHON_DOWNLOADS = "never";
+
+              LD_LIBRARY_PATH = inputs.nixpkgs.lib.makeLibraryPath [ ];
+            };
+
+            shellHook = ''
+              uv sync --frozen &&
+              source .venv/bin/activate
+            '';
           };
-
-          shellHook = ''
-            uv sync --frozen &&
-            source .venv/bin/activate
-          '';
-        };
       }) pkgsFor;
     };
 }
