@@ -35,7 +35,9 @@
               UV_PYTHON = lib.getExe python;
               UV_PYTHON_DOWNLOADS = "never";
 
-              LD_LIBRARY_PATH = inputs.nixpkgs.lib.makeLibraryPath [ ];
+              LD_LIBRARY_PATH = inputs.nixpkgs.lib.makeLibraryPath [
+                pkgs.stdenv.cc.cc.lib
+              ];
             };
 
             shellHook = ''
